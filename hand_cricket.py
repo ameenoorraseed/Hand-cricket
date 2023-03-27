@@ -5,13 +5,28 @@ def w_score(pn,score):
         f.write(pn+'\t'+str(score)+'\n')
         
 def r_score():
-    with open('score.txt','r') as f:
-        for i in f.readlines():
-            print(i)
-        
+    try:
+        with open('score.txt','r') as f:
+            for i in f.readlines():
+                print(i)
+
+    except:
+        print('\n','*'*5+' '+'no scores to display'+' '+'*'*5,'\n')
+
+def instruction():
+    #print('='*70)
+    print('\n\n\n'+'='*70+"\n\t\t\tABOUT GAME\n"+'='*70+"\n\nMODE\n\tIt is a single player game(a player vs a computer)\n\nGAME\n\tFirst the computer makes a move and then player can choose a number between 1 - 6.\n\tWhen a player and computer gives a same number then the player is out Each time player gives another number then the score is added ip.\n\nSCORE\n\tThe score is saved in scores.txt and it will be automatically updated each time the game is played.")
+    print('\n'*5)
+
+    
+    
 def play():
     score = 0
     pn = str(input("enter your name: "))
+    print('\n'*25)
+
+    
+    print('welcome',pn)
     while True:
         cpu_r = random.randint(1,6)
         while True:
@@ -30,19 +45,19 @@ def play():
             score = score + p_r
 
 while True:
-    print('welcome to game')
-    c = int(input('1.play\n2.highscore\nexit\nenter your choice: '))
+    print('\n'+'='*70)
+    print('\t'*3,'Hand Cricket')
+    print('='*70,'\n')
+    #print('='*20)
+    c = int(input('1.play\n2.score\n3.how to play\n4.exit\n\nenter your choice: '))
     if c == 1:
         play()
     elif c==2:
         r_score()
     elif c==3:
+        instruction()
+    elif c==4:
         break
-    
-            
-    
-
-    
-    
-    
-    
+    else:
+        print('*'*5+"invalid choice!!!"+'*'*5)
+       
