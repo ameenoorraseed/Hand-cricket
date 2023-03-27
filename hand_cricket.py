@@ -23,10 +23,10 @@ def instruction():
 def play():
     score = 0
     pn = str(input("enter your name: "))
-    print('\n'*25)
-
-    
+        
     print('welcome',pn)
+    print('\n'*5)
+    
     while True:
         cpu_r = random.randint(1,6)
         while True:
@@ -36,6 +36,9 @@ def play():
             else:
                 break
         if p_r == cpu_r:
+            import os
+            clear = lambda: os.system('cls')
+            clear()
             print('cpu run is',cpu_r)
             print("\nyour out!!!\nyour score is:",score)
             w_score(pn,score)
@@ -45,10 +48,14 @@ def play():
             score = score + p_r
 
 while True:
-    print('\n'+'='*70)
-    print('\t'*3,'Hand Cricket')
-    print('='*70,'\n')
-    #print('='*20)
+    
+    print('\t'*3,'''\n\n\n\n\t██╗  ██╗ █████╗ ███╗   ██╗██████╗      ██████╗██████╗ ██╗ ██████╗██╗  ██╗███████╗████████╗
+\t██║  ██║██╔══██╗████╗  ██║██╔══██╗    ██╔════╝██╔══██╗██║██╔════╝██║ ██╔╝██╔════╝╚══██╔══╝
+\t███████║███████║██╔██╗ ██║██║  ██║    ██║     ██████╔╝██║██║     █████╔╝ █████╗     ██║   
+\t██╔══██║██╔══██║██║╚██╗██║██║  ██║    ██║     ██╔══██╗██║██║     ██╔═██╗ ██╔══╝     ██║   
+\t██║  ██║██║  ██║██║ ╚████║██████╔╝    ╚██████╗██║  ██║██║╚██████╗██║  ██╗███████╗   ██║   
+\t╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═════╝      ╚═════╝╚═╝  ╚═╝╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝   ╚═╝   
+                                                                                         ''')    #print('='*20)
     c = int(input('1.play\n2.score\n3.how to play\n4.exit\n\nenter your choice: '))
     if c == 1:
         play()
@@ -60,4 +67,11 @@ while True:
         break
     else:
         print('*'*5+"invalid choice!!!"+'*'*5)
-       
+    
+            
+    
+
+    
+    
+    
+    
